@@ -29,7 +29,7 @@
 
 
 
-可以参考：[github](https://www.baidu.com)
+可以参考：[https://github.com/zhouxiaofu/oa-archetype](https://github.com/zhouxiaofu/oa-archetype)
 
 
 
