@@ -29,10 +29,6 @@
 
 
 
-可以参考：[https://github.com/zhouxiaofu/create-maven-archetype/tree/main/oa-archetype](https://github.com/zhouxiaofu/create-maven-archetype/tree/main/oa-archetype)
-
-
-
 # 第二步 通过基础项目生成原型（脚手架）
 
 - 在项目**根目录**下添加 **archetype.properties**，参考[maven官方文档](https://maven.apache.org/archetype/maven-archetype-plugin/examples/create-with-property-file.html)，以下**配置仅供参考**
@@ -65,6 +61,10 @@
 - 使用**开发工具**打开
 
 脚手架到这里就生成好了
+
+
+
+**前两步完成之后可以参考：**[https://github.com/zhouxiaofu/create-maven-archetype/tree/main/oa-archetype](https://github.com/zhouxiaofu/create-maven-archetype/tree/main/oa-archetype)
 
 
 
@@ -107,7 +107,7 @@ server:
 </requiredProperty>
 ```
 
-同时需要在 **test/resources/projects/basic/archetype.properties** 添加 **requiredProperty **的默认值（用作打包时的测试，否则打包会报错）
+同时需要在 **test/resources/projects/basic/archetype.properties** 添加 **requiredProperty**的默认值（用作打包时的测试，否则打包会报错）
 
 ```properties
 serverPort=8080
