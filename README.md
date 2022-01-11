@@ -49,6 +49,12 @@
 
 - 复制项目.gitignore文件，并重命名为 **\_\_gitignore\_\_**
 
+  ```shell
+  __gitignore__
+  ```
+
+  
+
 - 检查项目各项配置，确认无误之后，在项目**根目录**下执行命令：
 
   ```shell
@@ -58,6 +64,7 @@
 - 执行脚本后会在项目**根目录**下生成 **target/generated-sources/archetype**（输出目录无法修改，参考[maven-archetype-plugin源码](https://github.com/apache/maven-archetype/blob/maven-archetype-2.4/maven-archetype-plugin/src/main/java/org/apache/maven/archetype/mojos/CreateArchetypeFromProjectMojo.java#L210-L211)）
 
 - 把archetype复制出来，重命名为 **oa-framework-archetype**
+
 - 使用**开发工具**打开
 
 脚手架到这里就生成好了
@@ -68,9 +75,11 @@
 
 
 
-# 第三步 优化原型（脚手架）
+# 第三步 变量与打包
 
-由原型生成的项目配置会与基础项目一致，需要有一些自定义的配置，如 **application.yml**的内容如下
+## 变量
+
+由原型生成的项目配置会与基础项目一致，需要有一些自定义的配置，如 **application.yml** 的内容如下
 
 ```yaml
 spring:
@@ -80,7 +89,7 @@ server:
   port: 8080
 ```
 
-通过原型生成的项目也会跟这个一样，需要 每次生成的时候自定义一些配置 如 **spring.application.name、server.port**等配置，或者是代码中的一些配置
+通过原型生成的项目也会跟这个一样，需要 每次生成的时候自定义一些配置 如：**spring.application.name、server.port** 等配置，或者是代码中的一些配置
 
 这个时候就可以使用**变量**，修改后：
 
@@ -98,7 +107,7 @@ server:
 
 由于 serverPort 变量并不是生成项目时的必填变量，所以我们需要将其设置为必填
 
-在 xml **archetype-descriptor->requiredProperties**下添加
+在 xml **archetype-descriptor -> requiredProperties** 下添加
 
 ```xml
 <requiredProperty key="serverPort">
@@ -107,7 +116,7 @@ server:
 </requiredProperty>
 ```
 
-同时需要在 **test/resources/projects/basic/archetype.properties** 添加 **requiredProperty**的默认值（用作打包时的测试，否则打包会报错）
+同时需要在 **test/resources/projects/basic/archetype.properties** 添加 **requiredProperty** 的默认值（用作打包时的测试，否则打包会报错）
 
 ```properties
 serverPort=8080
@@ -117,7 +126,7 @@ serverPort=8080
 
 可以参考：[https://github.com/zhouxiaofu/create-maven-archetype/tree/main/oa-framework-archetype](https://github.com/zhouxiaofu/create-maven-archetype/tree/main/oa-framework-archetype)
 
-
+## 打包
 
 修改完毕后，打包
 
@@ -143,7 +152,7 @@ serverPort=8080
 mvn archetype:generate -DgroupId=com.yyds.oa -DartifactId=oa-user -Dversion=0.0.1-SNAPSHOT -Dpackage=com.yyds.oa.archetype -DserverPort=8081 -DarchetypeGroupId=com.yyds.oa.framework -DarchetypeArtifactId=oa-framework-archetype -DarchetypeVersion=0.0.1-SNAPSHOT
 ```
 
-参数解析：
+**参数介绍：**
 
 - groupId、artifactId、version、package、serverPort  需要生成的项目配置
 - archetypeGroupId、archetypeArtifactId、archetypeVersion  指定生成项目的原型
@@ -158,7 +167,7 @@ mvn archetype:generate -DgroupId=com.yyds.oa -DartifactId=oa-user -Dversion=0.0.
 
 
 
-
+也可以通过IDEA等编辑器配置maven archetype，然后生成项目
 
 
 
