@@ -113,6 +113,12 @@ server:
 serverPort=8080
 ```
 
+
+
+可以参考：[https://github.com/zhouxiaofu/oa-framework-archetype](https://github.com/zhouxiaofu/oa-framework-archetype)
+
+
+
 修改完毕后，打包
 
 - 有maven私服：
