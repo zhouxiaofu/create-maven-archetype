@@ -29,7 +29,7 @@
 
 
 
-可以参考：[https://github.com/zhouxiaofu/oa-archetype](https://github.com/zhouxiaofu/oa-archetype)
+可以参考：[https://github.com/zhouxiaofu/create-maven-archetype/tree/main/oa-archetype](https://github.com/zhouxiaofu/create-maven-archetype/tree/main/oa-archetype)
 
 
 
@@ -115,7 +115,7 @@ serverPort=8080
 
 
 
-可以参考：[https://github.com/zhouxiaofu/oa-framework-archetype](https://github.com/zhouxiaofu/oa-framework-archetype)
+可以参考：[https://github.com/zhouxiaofu/create-maven-archetype/tree/main/oa-framework-archetype](https://github.com/zhouxiaofu/create-maven-archetype/tree/main/oa-framework-archetype)
 
 
 
