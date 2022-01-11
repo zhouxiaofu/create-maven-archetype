@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: oa-archetype
+server:
+  port: 8080
