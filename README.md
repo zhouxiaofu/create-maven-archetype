@@ -208,6 +208,10 @@ mvn archetype:generate -DgroupId=com.yyds.oa -DartifactId=oa-user -Dversion=0.0.
 
 
 
+查看最新文档：[https://github.com/zhouxiaofu/create-maven-archetype](https://github.com/zhouxiaofu/create-maven-archetype)
+
+
+
 
 
 
