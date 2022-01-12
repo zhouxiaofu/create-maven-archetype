@@ -96,7 +96,7 @@ server:
 ```yaml
 spring:
   application:
-    name: ${artifactId}
+    name: ${serverName}
 server:
   port: ${serverPort}
 ```
@@ -114,12 +114,47 @@ server:
     <!-- 也可以加上defaultValue，则变成非必填 -->
 <!--      <defaultValue>8080</defaultValue>-->
 </requiredProperty>
+<requiredProperty key="serverName">
+    <!-- server name 默认为 artifactId -->
+    <defaultValue>${artifactId}</defaultValue>
+</requiredProperty>
 ```
+
+
+
+**<font color="#e54d42">注意：</font>需要使用变量的文件需要检查 fileSet 标签是否有 filtered="true" ，没有则需要加上。**
+
+修改前：
+
+```xml
+<fileSet encoding="UTF-8">
+    <directory>src/main/resources</directory>
+    <includes>
+        <include>**/*.yml</include>
+    </includes>
+</fileSet>
+```
+
+修改后：
+
+```xml
+<fileSet encoding="UTF-8" filtered="true">
+    <directory>src/main/resources</directory>
+    <includes>
+        <include>**/*.yml</include>
+    </includes>
+</fileSet>
+```
+
+
+
+
 
 同时需要在 **test/resources/projects/basic/archetype.properties** 添加 **requiredProperty** 的默认值（用作打包时的测试，否则打包会报错）
 
 ```properties
 serverPort=8080
+serverName=basic
 ```
 
 
@@ -162,6 +197,8 @@ mvn archetype:generate -DgroupId=com.yyds.oa -DartifactId=oa-user -Dversion=0.0.
 ```shell
 -DinteractiveMode=false
 ```
+
+**推荐使用交互模式**
 
  [archetype:generate 官方文档](https://maven.apache.org/archetype/maven-archetype-plugin/generate-mojo.html)
 

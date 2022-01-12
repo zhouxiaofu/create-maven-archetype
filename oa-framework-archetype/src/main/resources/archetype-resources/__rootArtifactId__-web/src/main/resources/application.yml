@@ -1,5 +1,5 @@
 spring:
   application:
-    name: oa-archetype
+    name: ${serverName}
 server:
-  port: 8080
+  port: ${serverPort}

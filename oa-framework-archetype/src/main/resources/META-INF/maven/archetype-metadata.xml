@@ -10,6 +10,10 @@
       <!-- 也可以加上defaultValue，则变成非必填 -->
 <!--      <defaultValue>8080</defaultValue>-->
     </requiredProperty>
+    <requiredProperty key="serverName">
+        <!-- server name 默认为 artifactId -->
+        <defaultValue>${artifactId}</defaultValue>
+    </requiredProperty>
   </requiredProperties>
   <fileSets>
     <fileSet encoding="UTF-8">
@@ -89,7 +93,7 @@
             <include>**/*.md</include>
           </includes>
         </fileSet>
-        <fileSet encoding="UTF-8">
+        <fileSet encoding="UTF-8" filtered="true">
           <directory>src/main/resources</directory>
           <includes>
             <include>**/*.yml</include>
