@@ -13,7 +13,7 @@
     <name>${artifactId}</name>
     <description>Demo project for Spring Boot</description>
     <properties>
-        <start.class>com.yyds.oa.web.StartApplication</start.class>
+        <start.class>${package}.web.StartApplication</start.class>
         <java.version>1.8</java.version>
     </properties>
 
