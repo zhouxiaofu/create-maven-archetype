@@ -1,1 +1,0 @@
-放置**spring bean**的测试

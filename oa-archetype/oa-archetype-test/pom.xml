@@ -14,7 +14,7 @@
             <dependency>
                 <groupId>com.yyds.oa</groupId>
                 <artifactId>oa-archetype-web</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
+                <version>${project.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
