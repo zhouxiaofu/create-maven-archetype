@@ -202,6 +202,15 @@ mvn archetype:generate -DgroupId=com.yyds.oa -DartifactId=oa-user -Dversion=0.0.
 
  [archetype:generate 官方文档](https://maven.apache.org/archetype/maven-archetype-plugin/generate-mojo.html)
 
+**注意Maven3.9及以上版本**
+需要在当前目录创建一个空的pom.xml
+执行命令
+```shell
+# cmd
+mvn archetype:generate -DinteractiveMode=false -DaddModule=false -DarchetypeCatalog=local -DgroupId=com.lxmaglev.magnetos -DartifactId=magnetos-auth -Dversion=0.0.1-SNAPSHOT -Dpackage=com.lxmaglev.magnetos.auth -DserverPort=9000 -DarchetypeGroupId=com.lxmaglev.magnetos -DarchetypeArtifactId=magnetos-framework-archetype -DarchetypeVersion=0.0.1-SNAPSHOT
+# PowerShell
+cmd /c "mvn archetype:generate -DinteractiveMode=false -DaddModule=false -DarchetypeCatalog=local -DgroupId=com.lxmaglev.magnetos -DartifactId=magnetos-auth -Dversion=0.0.1-SNAPSHOT -Dpackage=com.lxmaglev.magnetos.auth -DserverPort=9000 -DarchetypeGroupId=com.lxmaglev.magnetos -DarchetypeArtifactId=magnetos-framework-archetype -DarchetypeVersion=0.0.1-SNAPSHOT"
+```
 
 
 也可以通过IDEA等编辑器配置maven archetype，然后生成项目
