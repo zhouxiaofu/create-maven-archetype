@@ -203,7 +203,7 @@ mvn archetype:generate -DgroupId=com.yyds.oa -DartifactId=oa-user -Dversion=0.0.
  [archetype:generate 官方文档](https://maven.apache.org/archetype/maven-archetype-plugin/generate-mojo.html)
 
 **注意Maven3.9及以上版本**
-需要在当前目录创建一个空的pom.xml
+需要在当前目录创建一个空的pom.xml，执行完命令后需要清理掉pom中的modules
 执行命令
 ```shell
 # cmd
