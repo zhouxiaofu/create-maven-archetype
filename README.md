@@ -59,6 +59,8 @@
 
   ```shell
   mvn archetype:create-from-project -Darchetype.properties=archetype.properties
+  # powershell执行下面的命令
+  mvn --% archetype:create-from-project -Darchetype.properties=archetype.properties
   ```
 
 - 执行脚本后会在项目**根目录**下生成 **target/generated-sources/archetype**（输出目录无法修改，参考[maven-archetype-plugin源码](https://github.com/apache/maven-archetype/blob/maven-archetype-2.4/maven-archetype-plugin/src/main/java/org/apache/maven/archetype/mojos/CreateArchetypeFromProjectMojo.java#L210-L211)）
